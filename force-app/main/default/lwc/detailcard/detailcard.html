@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Card">
+        <template if:true={cricketerData}>
+            
+            <div class="slds-p-around_small">
+                <h1><span slot="title">{cricketerData.Name}</span></h1>
+                <img src={cricketerData.Image_Url__c} class="cricketer"/>
+                <p>Runs: {cricketerData.Runs__c} </p>
+                <p>Nationality: {cricketerData.Nationality__c} </p>
+            </div>
+        </template>
+
+        
+    </lightning-card>
+</template>

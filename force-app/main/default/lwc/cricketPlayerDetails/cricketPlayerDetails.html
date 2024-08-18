@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Cricket Player's Detail">
+        <lightning-layout multiple-rows="true">
+            <template if:true={playerdetails}>
+                <template for:each={playerdetails} for:item="player">
+                    <lightning-layout-item size="6" key={player.Id} padding="around-small" class="slds-align_absolute-center">
+                        
+
+                        <div class="titlewrapper" onclick={handleClickPlayerCard} data-id={player.Id}>
+                            <div class="tile">
+                                <img src={player.Image_Url__c}/>
+                            </div>
+                            <div class="playerdata">
+                                <h1 class="slds-text-heading_medium">{player.Name}</h1>
+                                <p>Runs: {player.Runs__c}</p>
+                                <p>Nationality: {player.Nationality__c}</p>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    
+                </template>
+            </template>
+            <template if:true={error}>
+                Error
+            </template>
+
+        </lightning-layout>
+        
+    </lightning-card>
+    
+</template>

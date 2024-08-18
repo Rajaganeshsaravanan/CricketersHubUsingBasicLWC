@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Search Players">
+        
+        <lightning-button label="New Cricketer" onclick={createCricketer} slot="actions">
+        </lightning-button>
+
+        <lightning-combobox  value={selectedNationality} options={optionsArray} onchange={handleOptionChange}></lightning-combobox>
+
+        <template if:true={custommessage}>
+            Selected player id : {custommessage}
+        </template>
+    </lightning-card>
+    <div class="slds-m-top_small">
+        <c-cricket-player-details onselect={handleCustomMessage}></c-cricket-player-details>
+    </div>
+    
+</template>
